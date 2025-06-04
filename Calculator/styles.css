@@ -1,0 +1,161 @@
+:root {
+  --primary: #6366f1;  /* Интензивно синьо */
+  --primary-hover: #4f46e5;
+  --background: #f8fafc;  /* Светъл фон */
+  --surface: #ffffff;     /* Бял фон за елементи */
+  --text: #1e293b;       /* Тъмно сив текст */
+  --border: #e2e8f0;     /* Светла граница */
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Хедър */
+header {
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  padding: 1rem 2rem;
+}
+
+nav {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+nav a:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* Основно съдържание */
+.main-content {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+}
+
+/* Математически клавиатура */
+.math-pad {
+  background: var(--surface);
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  gap: 0.75rem;
+}
+
+.math-btn {
+  aspect-ratio: 1;
+  border: 2px solid var(--border);
+  background: white;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.math-btn:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Форма за въвеждане */
+.input-group {
+  display: grid;
+  gap: 1rem;
+}
+
+#problemInput {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  font-size: 1.1rem;
+  transition: border-color 0.2s ease;
+}
+
+#problemInput:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+#solveButton {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+#solveButton:hover {
+  background: var(--primary-hover);
+}
+
+/* Резултати */
+#solution {
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-top: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.solution-step {
+  padding: 1rem;
+  background: var(--background);
+  border-radius: 8px;
+  margin: 0.5rem 0;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Отзивчив дизайн */
+@media (max-width: 768px) {
+  .math-pad {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

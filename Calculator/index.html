@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MathAI - Модерен помощник</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1/new.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.7.0/math.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo-container">
+        
+        <h1>Математически AI помощник</h1>
+      </div>
+      <nav>
+        <a href="/Home/home.html">Начало</a>
+        <a href="/About/about.html">За нас</a>
+        <a href="/Calculator/index.html">Калкулатор</a>
+        <a href="/Generator/generator.html">Генератор</a>
+        <a href="/ImageReader/image_reader.html">Снимки</a>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <div class="math-pad">
+        <button class="math-btn" title="Корен квадратен">√</button>
+        <button class="math-btn" title="Квадрат">²</button>
+        <button class="math-btn" title="Реципрочно">⁻¹</button>
+        <button class="math-btn" title="Деление">÷</button>
+        <button class="math-btn" title="Умножение">×</button>
+        <button class="math-btn" title="Пи">π</button>
+        <button class="math-btn" title="Степен">^</button>
+        <button class="math-btn" title="Събиране">+</button>
+        <button class="math-btn" title="Изваждане">-</button>
+      </div>
+
+      <div class="input-group">
+        <input type="text" id="problemInput" placeholder="✏️ Въведете задача...">
+        <button id="solveButton">🔍 Реши задача</button>
+      </div>
+
+      <div id="solution"></div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
